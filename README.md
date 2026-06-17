@@ -23,3 +23,16 @@ npm run validate
 ```
 
 The validation script checks that the platform scaffold includes the required frontend modules, backend routes, database tables, risk rules, and explosive scoring engines.
+
+## Build-Everything Strategy Implemented
+
+The scaffold now includes deterministic production-path engines for the screenshot-style move:
+
+1. Upstox-ready market context and live tick integration boundary.
+2. 1-minute option candle model for premium, volume, OI, bid, and ask state.
+3. Premium acceleration, volume explosion, 15-minute structure break, option-chain bias, delta/OI/gamma, order-flow, and news-shock engines.
+4. Expected-points predictor for +5 through +100 premium-point expansion.
+5. Late Session Premium Expansion Spike setup detection for 14:30–15:25 IST.
+6. Risk engine, paper-trade simulator, live-trade guard, expanded database tables, and frontend roadmap/scanner cards.
+
+Live capital deployment must remain disabled until Upstox credentials, paper-trade analytics, broker compliance checks, and production monitoring are configured.

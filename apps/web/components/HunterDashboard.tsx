@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { create } from 'zustand';
-import { capitalProfile, engineWeights, entryRules, modules } from '../lib/platform';
+import { capitalProfile, engineWeights, entryRules, implementationRoadmap, modules, scannerSnapshot } from '../lib/platform';
 import { ProbabilityChart } from './ProbabilityChart';
 
 type HunterState = {
@@ -82,6 +82,27 @@ export function HunterDashboard() {
         <div>
           <p className="mb-4 text-sm font-black uppercase tracking-[0.3em] text-cyan-300">Expected points predictor</p>
           <ProbabilityChart />
+        </div>
+      </section>
+
+      <section className="grid gap-6 py-8 lg:grid-cols-[1.1fr_0.9fr]">
+        <div className="rounded-[2rem] border border-emerald-400/30 bg-emerald-400/10 p-6">
+          <p className="text-sm font-black uppercase tracking-[0.3em] text-emerald-300">Live scanner target</p>
+          <h2 className="mt-3 text-3xl font-black tracking-tight">{scannerSnapshot.instrument}</h2>
+          <div className="mt-5 grid gap-3 sm:grid-cols-2">
+            {Object.entries(scannerSnapshot).map(([label, value]) => (
+              <div key={label} className="rounded-2xl bg-slate-950/70 p-4">
+                <p className="text-xs font-bold uppercase tracking-widest text-slate-500">{label}</p>
+                <strong className="mt-2 block text-xl text-white">{value}</strong>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="rounded-[2rem] border border-slate-800 bg-slate-950/70 p-6">
+          <h2 className="text-3xl font-black tracking-tight">Build roadmap</h2>
+          <div className="mt-5 space-y-3">
+            {implementationRoadmap.map((item, index) => <div key={item} className="rounded-2xl bg-white/[0.04] p-4 text-sm font-bold text-slate-200">{index + 1}. {item}</div>)}
+          </div>
         </div>
       </section>
 
