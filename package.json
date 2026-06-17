@@ -1,0 +1,28 @@
+{
+  "name": "nexusquant-explosive-hunter",
+  "private": true,
+  "version": "3.0.0",
+  "scripts": {
+    "dev:web": "next dev apps/web",
+    "build:web": "next build apps/web",
+    "dev:api": "uvicorn services.api.app.main:app --reload --host 0.0.0.0 --port 8000",
+    "validate": "node scripts/validate-platform.mjs",
+    "build": "npm run validate"
+  },
+  "dependencies": {
+    "@tailwindcss/postcss": "^4.0.0",
+    "framer-motion": "^12.0.0",
+    "next": "^15.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "recharts": "^2.15.0",
+    "zustand": "^5.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "tailwindcss": "^4.0.0",
+    "typescript": "^5.0.0"
+  }
+}
